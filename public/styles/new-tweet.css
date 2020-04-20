@@ -1,0 +1,26 @@
+.new-tweet label {
+  display: block;
+  color: #9b9b9b;
+}
+
+.new-tweet textarea {
+  display: block;
+  width: 100%;
+  background-color:  #f4f1ec;
+  border: none;
+  border-bottom: 3px solid #9b9b9b;
+  margin-bottom: .75em ;
+
+}
+
+.new-tweet button {
+  background-color:  #4056A1;
+  color: white;
+  font-family: 'Bungee', sans-serif;
+  border: none;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', sans-serif;
+}
