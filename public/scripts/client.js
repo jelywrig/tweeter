@@ -10,13 +10,13 @@ $(document).ready( function () {
     const $tweet = $(`
       <article class="tweet">
           <header>
-            <img src=${tweetData.user.avatars}/>
-            <span>${tweetData.user.name}</span>
+            <img src=${escape(tweetData.user.avatars)}/>
+            <span>${escape(tweetData.user.name)}</span>
             <span class="spacer"></span>
-            <span class="handle">${tweetData.user.handle}</span>
+            <span class="handle">${escape(tweetData.user.handle)}</span>
           </header>
-          <section class="tweet-content">${tweetData.content.text}</section>
-          <footer><span>${daysAgo(tweetData.created_at)} days ago</span><span><i class="fab fa-font-awesome-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span></footer>
+          <section class="tweet-content">${escape(tweetData.content.text)}</section>
+          <footer><span>${daysAgo(escape(tweetData.created_at))} days ago</span><span><i class="fab fa-font-awesome-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span></footer>
         </article>
     
     `);

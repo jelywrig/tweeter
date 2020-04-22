@@ -4,3 +4,9 @@ const daysAgo = function(date) {
   return Math.round((today - date)/ (1000 * 60 * 60 * 24));
 
 }
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
