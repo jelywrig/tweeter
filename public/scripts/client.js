@@ -4,8 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready( function () {
-
+$(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
@@ -22,22 +21,22 @@ $(document).ready( function () {
     
     `);
     return $tweet;
-  }
+  };
 
   const renderTweets = function(tweets) {
     let $container = $('#tweets-container');
     $container.empty();
-    for(const tweet of tweets) {
+    for (const tweet of tweets) {
       $container.prepend(createTweetElement(tweet));
     }
-  }
+  };
 
   const loadTweets = function() {
     $.get('/tweets/')
-    .then(function(data) {
-      renderTweets(data);
-    } )
-  }
+      .then(function(data) {
+        renderTweets(data);
+      })
+  };
 
   // handle new tweet submission
   $('.new-tweet form').submit(function(event) {
@@ -46,19 +45,19 @@ $(document).ready( function () {
     const self = this;
     const tweetText = $(this.text).val();
     
-    if(tweetText.length === 0) {
+    if (tweetText.length === 0) {
       $('div.error').html('<i class="fas fa-exclamation-triangle"></i> Your tweet must have content! <i class="fas fa-exclamation-triangle"></i>').slideDown('slow');
     } else if (tweetText.length > MAXCHARS) {
       $('div.error').html(`<i class="fas fa-exclamation-triangle"></i> Your tweet has exceeded the maximum size of ${MAXCHARS} characters! <i class="fas fa-exclamation-triangle"></i>`).slideDown('slow');
     } else {
       $.post('/tweets/', $(this).serialize())
-      .then(res => {
-        $(self)[0].reset();
-        loadTweets();
-      });
+        .then(res => {
+          $(self)[0].reset();
+          loadTweets();
+        });
     }
     
-  })
+  });
   
   loadTweets();
-})
+});
