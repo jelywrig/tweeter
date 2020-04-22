@@ -27,7 +27,7 @@ $(document).ready( function () {
     let $container = $('#tweets-container');
     $container.empty();
     for(const tweet of tweets) {
-      $container.append(createTweetElement(tweet));
+      $container.prepend(createTweetElement(tweet));
     }
   }
 
@@ -52,6 +52,7 @@ $(document).ready( function () {
       $.post('/tweets/', $(this).serialize())
       .then(res => {
         $(self)[0].reset();
+        loadTweets();
       });
     }
     
