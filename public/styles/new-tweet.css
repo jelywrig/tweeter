@@ -29,7 +29,7 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.over.counter {
+.overCharCount.counter {
   color: red;
 }
 
@@ -38,5 +38,6 @@
   border: 3px solid red;
   margin: 1em;
   padding: 1em;
+  display: none;
 
 }

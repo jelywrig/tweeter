@@ -1,14 +1,21 @@
+const MAXCHARS = 140;
+
 $(document).ready( () => {
   const $input = $('#tweet-text');
   const $charCounter = $('output[for="tweet-text"]');
   
-  // use keyup so that it recounts after backspace
-  $input.keyup(function(event) {
-    $charCounter.val(140 - this.value.length);
+  const charCounter = function() {
+    $charCounter.val(MAXCHARS - this.value.length);
     if($charCounter.val() < 0) {
-      $charCounter.addClass('over');
+      $charCounter.addClass('overCharCount');
     } else {
-      $charCounter.removeClass('over');
+      $charCounter.removeClass('overCharCount');
     }
-  });
+  };
+  // use keyup so that it recounts after backspace
+  $input.keyup(charCounter);
+  // use change so copy/pasted text detected
+  $input.change(charCounter);
+
 })
+

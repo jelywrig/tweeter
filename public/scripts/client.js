@@ -6,8 +6,6 @@
 
 $(document).ready( function () {
 
-  //hide error
-  $('div.error').hide();
 
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
@@ -43,15 +41,15 @@ $(document).ready( function () {
 
   // handle new tweet submission
   $('.new-tweet form').submit(function(event) {
-    $('div.error').hide();
+    $('div.error').slideUp(80);
     event.preventDefault();
     const self = this;
     const tweetText = $(this.text).val();
     
     if(tweetText.length === 0) {
       $('div.error').html('<i class="fas fa-exclamation-triangle"></i> Your tweet must have content! <i class="fas fa-exclamation-triangle"></i>').slideDown('slow');
-    } else if (tweetText.length > 140) {
-      $('div.error').html('<i class="fas fa-exclamation-triangle"></i> Your tweet has exceeded the maximum size! <i class="fas fa-exclamation-triangle"></i>').slideDown('slow');
+    } else if (tweetText.length > MAXCHARS) {
+      $('div.error').html(`<i class="fas fa-exclamation-triangle"></i> Your tweet has exceeded the maximum size of ${MAXCHARS} characters! <i class="fas fa-exclamation-triangle"></i>`).slideDown('slow');
     } else {
       $.post('/tweets/', $(this).serialize())
       .then(res => {
