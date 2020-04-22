@@ -1,9 +1,9 @@
-header {
-  box-sizing: unset; /* so that padding doesn't overtake header size */
+.page-header {
+  /* box-sizing: unset; */
   height: 400px;
   width: 100%;
   text-align:center;
-  padding-top: 5em;  /*  to prevent header from being covered by fixed nav bar*/
+  margin-top: 120px;  /*  to prevent header from being covered by fixed nav bar*/
   background-image: url("../images/asfalt-dark.png");
   background-color: #cc8800;
   

@@ -1,0 +1,53 @@
+article.tweet header {
+  width: 98%;
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+
+.handle {
+  opacity: 0;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.tweet-content {
+  width: 98%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+article.tweet footer{
+  border-top: 3px solid #9b9b9b;
+  width: 98%;
+  font-size: 16px;
+  margin: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+
+  
+}
+
+article.tweet {
+  margin-top: 2em;
+  border: 3px solid #9b9b9b;
+  margin-bottom: 2em;
+  opacity: 0.8;
+}
+
+
+article.tweet:hover{
+  box-shadow: 10px 10px gray;
+  opacity: 1;
+}
+
+article.tweet:hover .handle {
+  opacity: .75;
+}
