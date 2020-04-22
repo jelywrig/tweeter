@@ -25,15 +25,27 @@ $(document).ready( function () {
 
   const renderTweets = function(tweets) {
     let $container = $('#tweets-container');
+    $container.empty();
     for(const tweet of tweets) {
       $container.append(createTweetElement(tweet));
     }
   }
 
+  const loadTweets = function() {
+    $.get('/tweets/')
+    .then(function(data) {
+      renderTweets(data);
+    } )
+  }
+
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
+    const self = this;
     $.post('/tweets/', $(this).serialize())
-    .then(res => console.log('promise resolved', res.status));
+    .then(res => {
+      $(self)[0].reset;
+      console.log('promise resolved', res.status)});
   })
   
+  loadTweets();
 })
