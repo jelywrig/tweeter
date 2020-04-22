@@ -38,13 +38,23 @@ $(document).ready( function () {
     } )
   }
 
+  // handle new tweet submission
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
     const self = this;
-    $.post('/tweets/', $(this).serialize())
-    .then(res => {
-      $(self)[0].reset;
-      console.log('promise resolved', res.status)});
+    const tweetText = $(this.text).val();
+    
+    if(tweetText.length === 0) {
+      alert("Your tweet must have content!");
+    } else if (tweetText.length > 140) {
+      alert("Maximum tweet length is 140 characters!");
+    } else {
+      $.post('/tweets/', $(this).serialize())
+      .then(res => {
+        $(self)[0].reset();
+      });
+    }
+    
   })
   
   loadTweets();
