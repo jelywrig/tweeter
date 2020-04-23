@@ -45,3 +45,13 @@ article.tweet:hover{
 article.tweet:hover .handle {
   opacity: .75;
 }
+
+#tweets-container {
+  margin: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .tweet-bucket {
+    width: 60%;
+  }
+}

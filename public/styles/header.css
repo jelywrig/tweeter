@@ -6,8 +6,7 @@
   background-color: #cc8800;
   color: white;
   padding: 1rem;
-  position: relative;
-  top: 120px;   
+  position: relative; 
 }
 
 
@@ -17,12 +16,5 @@
     width: 30%;
     margin: 3rem;
 
-  }
-  .bucket {
-    display: flex;
-    justify-content: space-around;
-  }
-  .container {
-    width: 60%;
   }
 }

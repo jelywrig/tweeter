@@ -26,8 +26,17 @@ body {
  */
 
  main {
-   width: 90%;
    margin: auto;
    position: relative;
    top: 120px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+
  }
+
+ @media screen and (min-width: 1024px) {
+  main {
+    flex-direction: row;
+  }
+}
