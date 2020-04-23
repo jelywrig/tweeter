@@ -25,7 +25,8 @@ nav {
 }
 @keyframes bounce {
   0% {transform: translateY(0);}
-  100% {transform: translateY(-10px);}  
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0px);}
 }
 
 #arrows {
@@ -35,8 +36,8 @@ nav {
   
 }
 
- #new-tweet-button:active #arrows{
+ #new-tweet-button:hover #arrows{
   animation-name: bounce;
-  animation-duration: 0.25s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;;
 }
