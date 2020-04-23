@@ -1,4 +1,8 @@
 
+section.new-tweet {
+  display: none;
+}
+
 .new-tweet form {
   margin: 1em;
 }
