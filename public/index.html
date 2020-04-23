@@ -40,27 +40,29 @@
     </nav>
 
     <!-- Header -->
-    <header class="page-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-          <h2>Jessie Wright</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class ="error"><i class="fas fa-exclamation-triangle"></i>This is a test error for styling. Remove me. <i class="fas fa-exclamation-triangle"></i></div>
-        <form method="POST" action="/tweets/">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </form>
-      </section>
-      <section id="tweets-container"></section> 
-      </section>
-    </main>
+    <section class="bucket">
+      <header class="page-header">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <div>
+            <h2>Jessie Wright</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class ="error"><i class="fas fa-exclamation-triangle"></i>This is a test error for styling. Remove me. <i class="fas fa-exclamation-triangle"></i></div>
+          <form method="POST" action="/tweets/">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </form>
+        </section>
+        <section id="tweets-container"></section> 
+        </section>
+      </main>
+    </section>
   </body>
 </html>
