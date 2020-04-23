@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-
+const onAnimationCompletion = function () {
+  $('#arrows').animate({top:"-=10"},200);
+}
 
   $('#new-tweet-button').click(function(event) {
     event.preventDefault();
@@ -8,10 +10,11 @@ $(document).ready(function() {
 
     if($('section.new-tweet').first().is(':hidden')) {
       $('section.new-tweet').slideDown();
-      $('#arrows').animate({height:"+=25"},500);
+      $('#arrows').animate({top:"+=10"},200, onAnimationCompletion);
     } else {
       $('section.new-tweet').slideUp();
-      $('#arrows').animate({height:"-=25"},500);
+      $('#arrows').animate({top:"+=10"},200, onAnimationCompletion);
+      
     }
     
 

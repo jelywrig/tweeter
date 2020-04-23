@@ -27,4 +27,5 @@ nav {
 #arrows {
   margin: auto;
   display: block;
+  position: relative;
 }
