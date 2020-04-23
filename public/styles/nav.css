@@ -8,11 +8,24 @@ nav {
   z-index: 1030;
   height: 120px;
   padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
   
 }
 
 #logo {
   font-family: 'Bungee', sans-serif;
   font-size: 36px;
-  
+}
+
+#new-tweet-button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+#arrows {
+  margin: auto;
+  display: block;
 }
