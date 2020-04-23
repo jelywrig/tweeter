@@ -1,13 +1,23 @@
 .page-header {
-  /* box-sizing: unset; */
   height: 400px;
   width: 100%;
   text-align:center;
-  margin-top: 120px;  /*  to prevent header from being covered by fixed nav bar*/
   background-image: url("../images/asfalt-dark.png");
   background-color: #cc8800;
-  
+  color: white;
+  padding: 3rem;
+  position: relative;
+  top: 120px;   
 }
 
 
 
+@media screen and (min-width: 1024px) {
+  .page-header{
+    width: 400px;
+    margin: 120px;
+  }
+  body {
+    display: flex;
+  }
+}

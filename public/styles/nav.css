@@ -41,3 +41,11 @@ nav {
   animation-duration: 0.5s;
   animation-iteration-count: infinite;;
 }
+
+
+@media screen and (max-width: 1023px) {
+  nav {
+    background-image: url("../images/asfalt-dark.png");
+    background-color: #cc8800;
+  }
+}
