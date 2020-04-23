@@ -4,6 +4,7 @@ $(document).ready(function() {
     event.preventDefault();
     if($('section.new-tweet').first().is(':hidden')) {
       $('section.new-tweet').slideDown();
+      $('#tweet-text').focus();
     } else {
       $('section.new-tweet').slideUp();
     }
