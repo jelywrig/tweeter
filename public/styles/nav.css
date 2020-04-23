@@ -23,9 +23,20 @@ nav {
   background-color: transparent;
   text-decoration: none;
 }
+@keyframes bounce {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}  
+}
 
 #arrows {
   margin: auto;
   display: block;
   position: relative;
+  
+}
+
+#arrows :active {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
