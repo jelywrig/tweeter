@@ -35,8 +35,8 @@ nav {
   
 }
 
-#arrows :active {
+ #new-tweet-button:active #arrows{
   animation-name: bounce;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;;
 }
