@@ -36,6 +36,12 @@ article.tweet {
   opacity: 0.8;
 }
 
+article.tweet footer i{
+  opacity: 0;
+}
+article.tweet:hover footer i{
+  opacity: 1;
+}
 
 article.tweet:hover{
   box-shadow: 10px 10px gray;
