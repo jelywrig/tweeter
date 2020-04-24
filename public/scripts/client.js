@@ -7,6 +7,8 @@
 $(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
+   
+    const tweetAge = daysAgo(escape(tweetData.created_at));
     const $tweet = $(`
       <article class="tweet">
           <header>
@@ -16,7 +18,7 @@ $(document).ready(function() {
             <span class="handle">${escape(tweetData.user.handle)}</span>
           </header>
           <section class="tweet-content">${escape(tweetData.content.text)}</section>
-          <footer><span>${daysAgo(escape(tweetData.created_at))} days ago</span><span><i class="fab fa-font-awesome-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span></footer>
+          <footer><span>${tweetAge} day${tweetAge === 1 ? '' : 's'} ago</span><span><i class="fab fa-font-awesome-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i></span></footer>
         </article>
     
     `);
