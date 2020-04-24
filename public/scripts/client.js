@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  // creates html for a tweet given the data
   const createTweetElement = function(tweetData) {
    
     const tweetAge = daysAgo(escape(tweetData.created_at));
@@ -25,14 +26,16 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // given a collection of tweets renders them to the page
   const renderTweets = function(tweets) {
     let $container = $('#tweets-container');
     $container.empty();
     for (const tweet of tweets) {
+      //prepend so newest is first
       $container.prepend(createTweetElement(tweet));
     }
   };
-
+ //fetches tweets and renders to page
   const loadTweets = function() {
     $.get('/tweets/')
       .then(function(data) {
@@ -42,6 +45,7 @@ $(document).ready(function() {
 
   // handle new tweet submission
   $('.new-tweet form').submit(function(event) {
+    //if the error is showing, hide it during submission so they will see if there is a new error
     $('div.error').slideUp(80);
     event.preventDefault();
     const self = this;
@@ -53,13 +57,14 @@ $(document).ready(function() {
       $('div.error').html(`<i class="fas fa-exclamation-triangle"></i> Your tweet has exceeded the maximum size of ${MAXCHARS} characters! <i class="fas fa-exclamation-triangle"></i>`).slideDown('slow');
     } else {
       $.post('/tweets/', $(this).serialize())
-        .then(res => {
+        .then(() => {
+          //clear the tweets already showing and reload all tweets
           $(self)[0].reset();
           loadTweets();
         });
     }
     
   });
-  
+  // load tweets on initial page load
   loadTweets();
 });

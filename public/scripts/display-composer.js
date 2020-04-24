@@ -8,7 +8,5 @@ $(document).ready(function() {
     } else {
       $('section.new-tweet').slideUp();
     }
-    
-
   });
 });
