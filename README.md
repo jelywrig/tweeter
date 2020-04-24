@@ -4,7 +4,9 @@ Tweeter is a simple, single-page Twitter clone. It was completed as an exercise 
 
 
 ## Final Product
-
+!["screenshot of wide layout"](https://github.com/jelywrig/tweeter/blob/master/public/images/wide%20screenshot.png)
+!["screenshot of narrow layout"](https://github.com/jelywrig/tweeter/blob/master/public/images/narrow%20screenshot.png)
+!["screenshot of error"](https://github.com/jelywrig/tweeter/blob/master/public/images/error%20screenshot.png)
 
 
 ## Getting Started
