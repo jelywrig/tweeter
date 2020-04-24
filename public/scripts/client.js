@@ -37,7 +37,7 @@ $(document).ready(function() {
     $.get('/tweets/')
       .then(function(data) {
         renderTweets(data);
-      })
+      });
   };
 
   // handle new tweet submission
